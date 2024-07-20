@@ -28,10 +28,10 @@ def test_get_pictures_check_content_type_equals_json(client):
 
 
 def test_get_picture_by_id(client):
-    id_delete = 2
-    res = client.get(f'/picture/{id_delete}')
+    id = 2
+    res = client.get(f'/picture/{id}')
     assert res.status_code == 200
-    assert res.json['id'] == id_delete
+    assert res.json['id'] == id
 
     res = client.get('/picture/404')
     assert res.status_code == 404
